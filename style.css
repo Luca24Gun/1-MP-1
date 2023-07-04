@@ -1,0 +1,379 @@
+/* Intégration des polices */
+
+@font-face {
+    font-family: "Dynamoe";
+    src: url("fonts/Dynamoe\ Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Oldtypewritter";
+    src: url("fonts/Old\ Typewriter.ttf") format("truetype");
+}
+
+/* Fin polices */
+
+/* Paramètres généraux */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+ul{
+    list-style: none;
+}
+
+main{
+    background: url(img/Background_1.png);
+    background-size: cover;
+}
+
+h1{
+    font-size: 80px;
+}
+
+h2{
+    font-size: 30px;
+}
+
+b{
+    color: #12100B;
+}
+
+b::selection{
+    color: #12100B;
+    background-color: white;
+}
+
+/* Fin paramètres généraux */
+
+
+
+
+/* Class communes */
+
+.d-flex{
+    display: flex;
+}
+
+.row{
+    flex-direction: row;
+}
+
+.column{
+    flex-direction: column;
+}
+
+.justify-center{
+    justify-self: center;
+}
+
+.align-center{
+    align-self: center;
+}
+
+.justify-content-center{
+    justify-content: center;
+}
+
+.align-items-center{
+    align-items: center;
+}
+
+.w100{
+    width: 100px;
+}
+
+.w400{
+    width: 400px;
+}
+
+.space-between{
+    justify-content: space-between;
+}
+
+.space-around{
+    justify-content: space-around;
+}
+
+.top100{
+    margin-top: 100px;
+}
+
+.top200{
+    margin-top: 400px;
+}
+
+.bot100{
+    margin-bottom: 100px;
+}
+
+.left10{
+    margin-left: 10%;
+}
+
+.right10{
+    margin-right: 10%;
+}
+
+.right100{
+    margin-right: 100px;
+}
+
+.text-white{
+    color: white;
+}
+
+.title-font{
+    font-family: "Dynamoe";
+    font-weight: 500;
+}
+
+.text-font{
+    font-family: "Oldtypewritter";
+    font-weight: 500;
+    letter-spacing: 5px;
+}
+
+.text-align-center{
+    text-align: center;
+}
+ /* Fin class communes */
+
+
+ /* Header */
+
+header{
+    background-color: #12100B;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#logo{
+    margin-top: 10px;
+}
+
+#menu{
+    gap: 30px;
+    margin-top: 25px;
+}
+
+/* Fin header */
+
+/* Footer */
+
+footer{
+    background-color: #12100B;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#up a img{
+    width: 200px;
+}
+
+#media img{
+    width: 80px;
+}
+
+/* Fin Footer */
+
+/* Responsive grands écrans */
+
+@media screen and (min-width: 700px) {
+
+/* Image + titre */
+
+#chien{
+    position: relative;
+}
+
+.img2{
+    position: absolute;
+    visibility: hidden;
+    top: 0px;
+    left: 0px;
+}
+
+#chien:hover .img2{
+    visibility: visible;
+}
+
+
+/* Fin image + titre */
+
+/* Résumé du livre */
+
+h3{
+    font-size: 30px;
+    width: 60%;
+}
+
+/* Fin résumé du livre */
+
+/* Photo + bio auteur */
+
+#bio{
+    width: 35%;
+    margin-right: 200px;
+    margin-top: 300px;
+}
+
+#bio p{
+    color: #12100B;
+    font-size: 20px;
+    border: 2px solid white;
+    padding: 5px;
+
+}
+
+#bio:hover p{
+    color: white;
+    mix-blend-mode: difference;
+}
+
+#vieux{
+    width: 700px;
+    margin-top: 50px;
+}
+
+/* Fin photo + bio auteur */
+
+/* Citations + illustration */
+
+.cursor{
+    cursor: context-menu;
+}
+
+#citations div p{
+    width: 70%;
+    font-size: 20px;
+}
+
+#citations div p::selection{
+    color: #12100B;
+    background-color: white;
+}
+
+#citations div img{
+    transform: rotate(-20deg);
+    margin-right: 170px;
+}
+
+/* Avis + illustration */
+
+#last{
+    padding-bottom: 100px;
+}
+
+#avis{
+    width: 50%;
+    font-size: 20px;
+    mix-blend-mode: difference;
+}
+
+}
+
+/* Fin grands écrans */
+
+
+/* responsive pour les petits écrans + smartphones */
+
+@media screen and (max-width: 700px) {
+
+    /* Première partie */
+
+    #entete{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        padding-top: 200px;
+    }
+
+    #chien{
+        position: relative;
+        margin-top: 100px;
+    }
+    
+    .img2{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        animation-duration: .30S;
+        animation-name: clignote;
+        animation-iteration-count: infinite;
+        animation-delay: 2s;
+    }
+
+    @keyframes clignote {
+        0% {opacity: 1;}
+        30% {opacity: 0;}
+
+        
+    }
+
+    /* Auteur */
+
+    #auteur{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #vieux{
+        width: 500px;
+        margin-top: 50px;
+    }
+
+    #auteur p{
+        color: white;
+    }
+
+    /* Citation */
+
+    #citations{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        margin-top: 300px;
+    }
+
+    #citations div p{
+        margin-top: 50px;
+    }
+    
+    #citations div img{
+        transform: rotate(20deg);
+        width: 300px;
+    }
+
+    /* Avis */
+
+    #last{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        padding-bottom: 100px;
+    }
+
+    #avis{
+        gap: 50px;
+    }
+
+    #last img{
+        margin-top: 50px;
+    }
+
+}
+
+/* Fin responsive petits écrans + smartphones */
